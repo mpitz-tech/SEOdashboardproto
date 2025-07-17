@@ -1116,6 +1116,516 @@ code {
   color: #1e293b;
 }
 
+/* Insights Panel */
+.insights-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.insights-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.insights-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.insights-header p {
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+.insights-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.loading-spinner {
+  text-align: center;
+}
+
+.spinner-icon {
+  color: #667eea;
+  animation: pulse 2s ease-in-out infinite alternate;
+  margin-bottom: 1rem;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.loading-spinner h3 {
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.loading-spinner p {
+  color: #64748b;
+}
+
+/* Persona Selector */
+.persona-selector {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.persona-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: white;
+  border: 2px solid #e2e8f0;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 280px;
+}
+
+.persona-btn:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.persona-btn.active {
+  border-color: #667eea;
+  background: #f8fafc;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.persona-btn.active.blue { border-color: #3b82f6; }
+.persona-btn.active.green { border-color: #10b981; }
+.persona-btn.active.purple { border-color: #8b5cf6; }
+
+.persona-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.persona-label {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 0.95rem;
+}
+
+.persona-description {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+/* Insights Content */
+.insights-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.insights-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section-title {
+  color: #1e293b;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+/* Insight Cards */
+.insight-card {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.insight-header {
+  background: #f8fafc;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.insight-icon {
+  color: #667eea;
+  flex-shrink: 0;
+}
+
+.insight-header h4 {
+  flex: 1;
+  color: #1e293b;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.insight-badge {
+  background: #667eea;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.insight-badge.warning {
+  background: #f59e0b;
+}
+
+.insight-badge.danger {
+  background: #ef4444;
+}
+
+.insight-badge.success {
+  background: #10b981;
+}
+
+.insight-content {
+  padding: 1.5rem;
+}
+
+/* Insights Tables */
+.insights-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.insights-table th,
+.insights-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.875rem;
+}
+
+.insights-table th {
+  background: #f8fafc;
+  font-weight: 600;
+  color: #374151;
+  position: sticky;
+  top: 0;
+}
+
+.insights-table td {
+  color: #1e293b;
+}
+
+/* Table Cell Styling */
+.query-cell {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.page-cell {
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #667eea;
+}
+
+.rpi-cell {
+  font-weight: 600;
+  color: #10b981;
+}
+
+.revenue-cell {
+  font-weight: 600;
+  color: #059669;
+}
+
+.position-cell {
+  font-weight: 500;
+  text-align: center;
+}
+
+.position-cell.danger {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.ctr-cell {
+  text-align: center;
+}
+
+.cvr-cell {
+  text-align: center;
+  font-weight: 500;
+}
+
+.cvr-cell.low {
+  color: #ef4444;
+}
+
+.cvr-cell.high {
+  color: #10b981;
+}
+
+.share-cell {
+  text-align: center;
+  font-weight: 500;
+}
+
+.gap-cell {
+  text-align: center;
+  font-weight: 600;
+}
+
+.gap-cell.positive {
+  color: #10b981;
+}
+
+.gap-cell.negative {
+  color: #ef4444;
+}
+
+.uplift-cell {
+  font-weight: 600;
+  color: #8b5cf6;
+}
+
+.visit-cell {
+  text-align: center;
+}
+
+.cluster-cell {
+  font-weight: 500;
+  color: #667eea;
+}
+
+/* Insight Summary */
+.insight-summary {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.insight-summary p {
+  color: #0369a1;
+  font-size: 0.875rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Brand Comparison */
+.brand-comparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.brand-metric {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.brand-metric h5 {
+  color: #374151;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.metric-label {
+  color: #64748b;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.metric-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metric-details span {
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+/* Device Comparison */
+.device-comparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.device-metric {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.device-metric h5 {
+  color: #374151;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.device-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-label {
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.stat-value {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.device-recommendations {
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.device-recommendations h5 {
+  color: #92400e;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+}
+
+.device-recommendations ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.device-recommendations li {
+  color: #92400e;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.device-recommendations li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Forecast Summary */
+.forecast-summary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.forecast-total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.forecast-value {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.forecast-label {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Responsive Design for Insights */
+@media (max-width: 768px) {
+  .persona-selector {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .persona-btn {
+    min-width: 100%;
+    max-width: 400px;
+  }
+
+  .brand-comparison,
+  .device-comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .insights-table {
+    font-size: 0.8rem;
+  }
+
+  .insights-table th,
+  .insights-table td {
+    padding: 0.5rem;
+  }
+
+  .forecast-value {
+    font-size: 2rem;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .header-container {

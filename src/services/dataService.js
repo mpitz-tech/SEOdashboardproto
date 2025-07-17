@@ -13,47 +13,14 @@ class DataService {
 
   async loadData() {
     try {
-      console.log('Loading data from API...');
-      
-      // Load analytics data from API
-      const analyticsResponse = await fetch('/api/ga');
-      if (!analyticsResponse.ok) {
-        throw new Error(`GA API error: ${analyticsResponse.status}`);
-      }
-      const analyticsResult = await analyticsResponse.json();
-      this.analyticsData = analyticsResult.data.map(createAnalyticsRecord);
-      this.metadata.analytics = analyticsResult.metadata;
-
-      // Load search console data from API
-      const searchConsoleResponse = await fetch('/api/gsc');
-      if (!searchConsoleResponse.ok) {
-        throw new Error(`GSC API error: ${searchConsoleResponse.status}`);
-      }
-      const searchConsoleResult = await searchConsoleResponse.json();
-      this.searchConsoleData = searchConsoleResult.data.map(createSearchConsoleRecord);
-      this.metadata.searchConsole = searchConsoleResult.metadata;
-
-      this.isLoaded = true;
-      console.log(`Loaded ${this.analyticsData.length} analytics records and ${this.searchConsoleData.length} search console records`);
-      
-      return { 
-        success: true, 
-        metadata: this.metadata 
-      };
+      console.log('Loading data from CSV files...');
+      return await this.loadDataFromStaticFiles();
     } catch (error) {
-      console.error('Error loading data from API:', error);
-      
-      // Fallback to static files if API fails
-      try {
-        console.log('Falling back to static CSV files...');
-        return await this.loadDataFromStaticFiles();
-      } catch (fallbackError) {
-        console.error('Fallback also failed:', fallbackError);
-        return { 
-          success: false, 
-          error: `API failed: ${error.message}. Fallback failed: ${fallbackError.message}` 
-        };
-      }
+      console.error('Error loading data:', error);
+      return { 
+        success: false, 
+        error: error.message 
+      };
     }
   }
 

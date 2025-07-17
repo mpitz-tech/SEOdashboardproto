@@ -8,6 +8,8 @@ const AIChat = ({ data, currentContext, contextualSuggestions, isPopup = false }
       return "Hi! I can see you're viewing the overview dashboard. I can help you understand these metrics, trends, and identify opportunities. What would you like to know about your performance?"
     } else if (currentContext === 'analytics') {
       return "I can see you're in the analytics section. I can help you understand the detailed performance data, identify patterns, and suggest optimizations. What specific aspect would you like to explore?"
+    } else if (currentContext === 'insights') {
+      return "I can see you're exploring advanced insights! I can help you understand revenue-per-impression analysis, CTR opportunities, ranking risks, and forecasting. These insights combine your GA and GSC data for deeper analysis. What would you like to dive into?"
     } else {
       return "Hello! I'm your SEO AI assistant. I can help you analyze your website performance, search rankings, and provide actionable insights. What would you like to know?"
     }
@@ -45,28 +47,57 @@ const AIChat = ({ data, currentContext, contextualSuggestions, isPopup = false }
     }
   }, [currentContext])
 
-  const defaultSuggestedQueries = [
-    {
-      icon: TrendingUp,
-      text: "What are my top performing pages?",
-      color: "blue"
-    },
-    {
-      icon: Search,
-      text: "Which search queries drive the most traffic?",
-      color: "green"
-    },
-    {
-      icon: DollarSign,
-      text: "How is my revenue performing?",
-      color: "purple"
-    },
-    {
-      icon: Lightbulb,
-      text: "What optimization opportunities do I have?",
-      color: "orange"
+  const getContextualQueries = () => {
+    if (currentContext === 'insights') {
+      return [
+        {
+          icon: DollarSign,
+          text: "Show me high-value keywords with low competition",
+          color: "green"
+        },
+        {
+          icon: TrendingUp,
+          text: "Which pages have the biggest CTR opportunities?",
+          color: "blue"
+        },
+        {
+          icon: Search,
+          text: "What's my brand vs non-brand performance?",
+          color: "purple"
+        },
+        {
+          icon: Lightbulb,
+          text: "Where am I losing revenue due to rank drops?",
+          color: "orange"
+        }
+      ]
     }
-  ]
+    
+    return [
+      {
+        icon: TrendingUp,
+        text: "What are my top performing pages?",
+        color: "blue"
+      },
+      {
+        icon: Search,
+        text: "Which search queries drive the most traffic?",
+        color: "green"
+      },
+      {
+        icon: DollarSign,
+        text: "How is my revenue performing?",
+        color: "purple"
+      },
+      {
+        icon: Lightbulb,
+        text: "What optimization opportunities do I have?",
+        color: "orange"
+      }
+    ]
+  }
+
+  const defaultSuggestedQueries = getContextualQueries()
 
   const suggestedQueries = contextualSuggestions 
     ? contextualSuggestions.map((text, index) => ({

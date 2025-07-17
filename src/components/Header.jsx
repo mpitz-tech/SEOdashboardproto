@@ -1,5 +1,5 @@
 import React from 'react'
-import { Search, TrendingUp, Brain, User } from 'lucide-react'
+import { Search, TrendingUp, Brain, User, Zap } from 'lucide-react'
 
 const Header = () => {
   return (
@@ -17,6 +17,10 @@ const Header = () => {
           <a href="#analytics" className="nav-link">
             <Search size={16} />
             Analytics
+          </a>
+          <a href="#insights" className="nav-link">
+            <Zap size={16} />
+            Insights
           </a>
           <a href="#ai-chat" className="nav-link">
             <Brain size={16} />

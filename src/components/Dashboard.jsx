@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import OverviewPanel from './OverviewPanel'
 import AnalyticsPanel from './AnalyticsPanel'
+import InsightsPanel from './InsightsPanel'
 import AIChat from './AIChat'
 
 const Dashboard = ({ data, onContextChange }) => {
@@ -9,6 +10,7 @@ const Dashboard = ({ data, onContextChange }) => {
   const tabs = [
     { id: 'overview', component: OverviewPanel },
     { id: 'analytics', component: AnalyticsPanel },
+    { id: 'insights', component: InsightsPanel },
     { id: 'ai-chat', component: AIChat }
   ]
 
