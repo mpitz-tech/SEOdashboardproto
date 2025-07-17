@@ -1,0 +1,20 @@
+{
+  "name": "seo-dashboard-api",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "CSV API server for SEO dashboard",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "concurrently": "^9.2.0",
+    "cors": "^2.8.5",
+    "csvtojson": "^2.0.10",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
